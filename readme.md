@@ -1,5 +1,5 @@
 # Data Structures & Algorithms course
-This documentation presents a structured compilation of methodical notes curated during a comprehensive Data Structures and Algorithms (DSA) course. The notes are systematically organized and hosted on a GitHub repository to facilitate ongoing learning, reference, and algorithmic problem-solving.
+This documentation presents a structured compilation of methodical notes curated during a comprehensive Data Structures and Algorithms (DSA) course. The notes are systematically organized to facilitate ongoing learning, reference, and algorithmic problem-solving.
 
 >This documentation is still work in progress
 
