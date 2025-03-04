@@ -56,7 +56,7 @@ Depending on where data is kept, how it is organized and what is the use of it, 
 
 ![memory structure](/assets/memory-structure.png)
 
-
+---
 ### Static memory allocation
 - **Fixed size**: Memory is allocated at compile-time, and the size is fixed.
 - **Stack-based**: Memory is allocated from the stack, which is a region of memory that stores local variables and function calls.
@@ -66,18 +66,16 @@ Depending on where data is kept, how it is organized and what is the use of it, 
 
 In this simple example, the program is loaded into the main memory (RAM) and the variables `a` and `b` are allocated on the stack. They are loaded in the fragment called **activation record** of the main function.
 
-In the next example, the main function allocate 2 variables and calls the function `func1()` that allocates a variable and then calls `func2()`.
+In the next example, the main function allocates 2 variables and calls the function `func1()` that allocates a variable and then calls `func2()`.
 
 ![stack](/assets/stack-2.png)
 
 The step by step process would be:
 1. main function is executed: allocates variables and calls `func1()`
 2. `func1()` allocates variable `a` and calls `func2()`
-3. once `func2()` is finished, its activation record is destroyed and the control is returned to `func1()`
-4. once `func1()` is finished, its activation record is destroyed and the control is returned to function `main()`
-
-Once each function is finished executing, the control is returned to the caller and their stack frame is destroyed (deallocated).
-
+3. once `func2()` is finished, its activation record is deallocated and control is returned to `func1()`
+4. once `func1()` is finished, its activation record is deallocated and control is returned to function `main()`
+---
 ### Dynamic Memory Allocation
 - **Variable size**: Memory is allocated at runtime, and the size can vary.
 - **Heap-based**: Memory is allocated from the heap, which is a region of memory that stores dynamically allocated variables.
@@ -106,7 +104,7 @@ The following image illustrate the representation of an integer type.
 ![integer-representation](/assets/integer-type.png)
 
 **Operations**:
-some of the operation allowed:
+some of the operations allowed:
 - addition (`+`)
 - subtraction (`-`)
 - multiplication (`*`)
@@ -150,14 +148,14 @@ Time complexity and space complexity are fundamental concepts in computer scienc
 >Time complexity is a measure of how the execution time of an algorithm scales with the input size
 
 >Space complexity evaluates how much memory space an algorithm requires relative to the input size
-
+---
 ### Order of n
-The time complexity is defined bu the polinomial degree.
+The time complexity is defined by the polinomial degree.
 
-Using a **linear search algorithm**, we have to go through each element (worst case) and compare it with the element we are looking for. This is also represented by the `Order of n` or O(n), where n is the number of elements.
+Using a **linear search algorithm**, we have to go through each element (worst case) and compare it with the element we are looking for. This is also represented by the `Order of n` or $O(n)$, where n is the number of elements.
 
 The complexity can be determined based on the procedure or by analyzing the code.
-- **procedure**:
+- **procedure**
     ```
     Array:  |2|5|9|7|6|13|8| (7 elements)
     O(n) -> O(7)
@@ -176,17 +174,19 @@ We can observe that:
 - it will search the entire array and compare if the current element is equal to 8
 - the complexity is `O(7)` where 7 is the length of the array (worst case)
 
-### Order of n2 (quadratic)
-An algorithm with a time complexity of O(n<sup>2</sup>) is said to have quadratic time complexity. This means that the running time of the algorithm increases quadratically with the size of the input data.
+---
 
-- **procedure**:
+### Order of ${n^2}$ (quadratic)
+An algorithm with a time complexity of O(n<sup>2</sup>) is said to have quadratic time complexity. This means that the runtime of an algorithm scales quadratically with the size of the input (size=10, runtime=100 steps)
+
+- **procedure**
     ```
     Array:  |2|5|9|7|6|13|8| (7 elements)
     O(n2) -> O(49)
     ```
 
 - **code**:
-The codification of a linear algorithm in `c` language
+The codification of a quadratic algorithm in `c` language
 
     ```c
     for (int i = 0; i < n - 1; ++i){
@@ -206,7 +206,7 @@ We can observe that:
 ### Binary search (log n)
 Binary search is an algorithm that operates with a time complexity of O(log n) in both average and worst-case scenarios. This efficiency is due to its divide-and-conquer approach, where the search range is halved with each comparison.
 
-- **procedure**:
+- **procedure**
     ```
     Array:  |2|5|9|7|6|13|8| (7 elements)
     O(log n)
@@ -218,12 +218,12 @@ The codification of the binary search algorithm in `c` language
     for (int i = n; i > 1; i = i / 2)
         ...
     ```
-We can observe that:
-- the index `i` is halved every iteration
+    We can observe that:
+    - the index `i` is halved every iteration
 
 **Polinomial degree**: $\frac{log(n)}{2} = log_{2}n$
-- `i = n` <=> $log(n)$
-- `i = i/2` <=> $log_{2}n$
+- `i = n` -> $log(n)$
+- `i = i/2` -> $log_{2}n$
 
 ### Examples
 - $O(n^0)$:
