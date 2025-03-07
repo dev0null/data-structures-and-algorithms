@@ -132,11 +132,12 @@ Some data is stored on the heap for several reasons:
     - through the pointer (on stack) we have now access to the memory allocated on the **heap**
 
 ### Pointers to structures
-Pointers can point to structure on stack and on heap, as every other types.
+Pointers can point to structures on stack and heap as every other types.
+
 #### 1. Structure allocated on STACK:
 ```C
 Rectangle rect = {10,5};
-Rectangle *ptr=&rect;   // pointer to rect structure
+Rectangle *ptr = &rect;   // pointer to rect structure
 ```
 - **Accessing structures on Stack**:
     
@@ -169,7 +170,7 @@ ptr_heap = (Rectangle *)malloc(sizeof(Rectangle));
 In C++, a reference is an alias for an existing variable, declared using the '&' operator, which allows for efficient parameter passing and modification without copying.
 
 ### Definition, Declaration and Initialization of a reference
-Unlike pointers, once a reference is initialized, it cannot be made to refer to a different object or set to null.
+Unlike pointers, once a reference is initialized, it cannot refer to a different object or set to null.
 
 >A reference **MUST** be initialized at declaration.
 ```C++
@@ -208,20 +209,20 @@ There are three methods for passing parameters:
 - **Pass by Value**: a copy of the argument's value is made and passed to the function. Any changes made to the parameter inside the function do not affect the original argument.
     ```c
     void swap(int x, int y);    // signature
-    swap(a, b);                 // invokation
+    swap(a, b);                 // invocation
     ```
     
-- **Pass by Reference**(reference): the memory address of the argument is passed to the function. The function can then access and modify the original data directly.
+- **Pass by Reference** (reference): the memory address of the argument is passed to the function. The function can then access and modify the original data directly.
     ```c++
     void swap(int& x, int& y);
     swap(a, b);
     ```
     - same syntax as call by value, only prepend ampersand to the formal parameters names
     - this method is only supported in C++
-    - copy the code of the function inside the function caller, making the machine code monolithic but the source code is still procedural/modular
+    - **copy the code of the function inside the function caller**, making the machine code monolithic but the source code is still procedural/modular
     - should be used for smaller functions
 
-- **Pass by Address**(pointer): this is similar to pass by reference, but it explicitly involves passing the memory address of the argument. The function can then access and modify the original data through the pointers.
+- **Pass by Address** (pointer): this is similar to pass by reference, but it explicitly involves passing the memory address of the argument. The function can then access and modify the original data through the pointers.
 
     ```c
     void swap(int *x, int *y);
@@ -330,7 +331,7 @@ int main(){
 
 ## Monolithic vs Modular programming
 **MONOLITHIC PROGRAM**:
-A monolithic program, or monolithic application, is a type of software application that is `designed and built as a single`, unified unit, where all components are tightly coupled and deployed together
+A monolithic program, or monolithic application, is a type of software application that is `designed and built as a single and unified unit`, where all components are tightly coupled and deployed together
 
 **Example of a monolithic program**:
 ```c++
@@ -353,7 +354,7 @@ int main(){
 ---
 **MODULAR PROGRAMMING**: software design technique that emphasizes `separating the functionality of a program into independent, interchangeable modules`, each containing everything necessary to execute only one aspect of the desired functionality.
 
->processing of data is delegated to functions
+>Processing of data is delegated to functions
 
 **Example of a C-style modular program**:
 The following program give the same results as the monolithic one but the code is now modular, more readable and scalable.
