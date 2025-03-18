@@ -47,6 +47,8 @@ Depending on where data is kept, how it is organized and what is the use of it, 
 ## Static vs Dynamic memory
 - **Structure**: memory is organized into addressable units known as bytes and is arranged in a linear manner.
 
+![memory structure](/assets/memory-structure.png)
+
 - **Segments**: Programs utilize main memory, which is divided into three primary sections:
     - **code section** where machine code resides
     - **stack** used for storing local variables
@@ -54,7 +56,7 @@ Depending on where data is kept, how it is organized and what is the use of it, 
 - **STACK (static)**: a linear data structure that follows the Last In First Out (LIFO) or First In Last Out (FILO) principle
 - **HEAP (dynamic)**: a tree-based data structure
 
-![memory structure](/assets/memory-structure.png)
+
 
 ---
 ### Static memory allocation
@@ -95,8 +97,10 @@ In this example an array is created dynamically and allocated on the **heap** me
 
 A data type represents the nature and type of data, describing the representation, interpretation, and structure of values or objects stored in computer memory
 
+>A data type is an attribute of data that specifies the type of value a variable can hold and the operations that can be performed on it without causing an error
+
 ### Integer data type (primitive datatype)
-Example: assume an integer in C/C++ takes 2-bytes, the first bit is reserved for the sign bit and the remaining for data.
+Example: assume an integer in C/C++ takes 2-bytes, the first bit is reserved for the sign bit and the remaining 15 bits for data.
 
 **Representation**:
 The following image illustrate the representation of an integer type.
@@ -161,7 +165,7 @@ The complexity can be determined based on the procedure or by analyzing the code
     O(n) -> O(7)
     ```
 - **code**:
-The codification of a linear algorithm in `c` language
+The implementation of a linear algorithm in `c` language
 
     ```c
     int arr[7] = {2,5,9,7,6,13,8};
@@ -186,7 +190,7 @@ An algorithm with a time complexity of O(n<sup>2</sup>) is said to have quadrati
     ```
 
 - **code**:
-The codification of a quadratic algorithm in `c` language
+The implementation of a quadratic algorithm in `c` language
 
     ```c
     for (int i = 0; i < n - 1; ++i){
@@ -212,7 +216,7 @@ Binary search is an algorithm that operates with a time complexity of O(log n) i
     O(log n)
     ```
 - **code**:
-The codification of the binary search algorithm in `c` language
+The implementation of the binary search algorithm in `c` language
 
     ```c
     for (int i = n; i > 1; i = i / 2)
