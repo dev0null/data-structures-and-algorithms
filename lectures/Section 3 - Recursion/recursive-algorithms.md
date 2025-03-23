@@ -28,8 +28,8 @@ Sum(n) = 1 + 2 + 3 + ... + (n - 1) + n
 Sum(n) = Sum(n-1) + n
 ```
 The sum is equal to the sum of all terms up to $ n - 1 $ (recursive), then $ + n $ (constant):
-- $ n - 1 $: recursive part of the equation
-- $ + n $: the last term is added to $sum(n-1)$
+- $n - 1$: recursive part of the equation
+- $+ n$: the last term is added to $sum(n-1)$
 - **Example**: 
     ```
     Sum(4) = (1 + 2 + 3) + 4
@@ -57,8 +57,8 @@ int sum(int n){
         return sum(n - 1) + n;
 }
 ```
-- **Time Complexity**: $O(n)$, 6 total calls for `sum(5)` -> $ n + 1 $ calls
-- **Space Complexity**: $O(n)$, 6 stack frames are created for `sum(5)` -> $ n + 1 $
+- **Time Complexity**: $O(n)$, 6 total calls for `sum(5)` -> $n + 1$ calls
+- **Space Complexity**: $O(n)$, 6 stack frames are created for `sum(5)` -> $n + 1$
 
 *Refer to the tracing tree for a visual representation of the function control flow*
   ![](/assets/recursion-sum-of-numbers.png)
@@ -149,8 +149,8 @@ int fact(int n){
 }
 ```
 - **NOTE**: the base case should never be `n == 0` because a negative input will lead to a Stack Overflow error, since the condition is never met and the input `n` is decremented every call.
-- **Time Complexity**: $O(n)$, 6 total calls for `fact(5)` -> $ n + 1 $ calls
-- **Space Complexity**: $O(n)$, 6 stack frames are created for for `fact(5)` -> $ n + 1 $
+- **Time Complexity**: $O(n)$, 6 total calls for `fact(5)` -> $n + 1$ calls
+- **Space Complexity**: $O(n)$, 6 stack frames are created for for `fact(5)` -> $n + 1$
 
 ###  Factorial using Iteration
 Implementation of the algorithm using iteration:
@@ -351,7 +351,7 @@ We have already seen the [Sum](#sum-of-first-n-natural-numbers), [Factorial](#fa
 
 >When need to return multiple values in a recursion, make use of static variables
 
-**Example for** ($ \boldsymbol{e^x}$) **with 4 terms**:
+**Example for** ($\boldsymbol{e^x}$) **with 4 terms**:
 
 ```C
 double e(int x, int n){

@@ -149,10 +149,10 @@ Each call takes constant time (1 unit of time), so the overall time complexity f
 
 
 ### Time Complexity Analysis via Recurrence Relation  
-To determine the time complexity $ T(n) $ of the function `func()`, we assume:  
-- The function call `func(n)` takes $ T(n) $ time.  
+To determine the time complexity $T(n)$ of the function `func()`, we assume:  
+- The function call `func(n)` takes $T(n)$ time.  
 - Each non-recursive statement (e.g., the `if` check and `printf`) takes **1 unit** of time.  
-- The recursive call `func(n - 1)` contributes $ T(n-1) $ time.  
+- The recursive call `func(n - 1)` contributes $T(n-1)$ time.  
 
 **Code Breakdown**:  
 ```c  
@@ -165,7 +165,7 @@ void func(int n) {
 ```  
 
 **Recurrence Relation Derivation**:  
-The total time $ T(n) $ is the sum of the non-recursive operations and the recursive call:  
+The total time $T(n)$ is the sum of the non-recursive operations and the recursive call:  
 $$  
 T(n) = \underbrace{1 \ (\text{if-check}) + 1 \ (\text{printf})}_{\text{2 units}} + T(n-1)  
 $$  
@@ -184,7 +184,7 @@ T(n - 1) + 2 & \text{if } n > 0
 $$  
 
 ### - Conclusion -
-The time complexity is $ T(n) = 2n + 1 $, which simplifies to $ \mathcal{O}(n) $.
+The time complexity is $T(n) = 2n + 1$, which simplifies to $\mathcal{O}(n)$.
 
 ---
 
@@ -406,8 +406,8 @@ void fun_B(int n){
         - `fun_B(n)` calls `fun_A(n/2)` (using integer division).
 
     2. **Recurrence Relations**:
-        - Let $ T_A(n) $ denote the time for `fun_A(n)`.
-        - Let $ T_B(n) $ denote the time for `fun_B(n)`.
+        - Let $T_A(n)$ denote the time for `fun_A(n)`.
+        - Let $T_B(n)$ denote the time for `fun_B(n)`.
         - The recurrences are:
             $$
             T_A(n) = O(1) + T_B(n-1) \quad \text{(for } n > 0\text{)}
@@ -415,10 +415,10 @@ void fun_B(int n){
             $$
             T_B(n) = O(1) + T_A(n/2) \quad \text{(for } n > 1\text{)}
             $$
-        - Base cases: $ T_A(n) = O(1) $ for $ n \leq 0 $, $ T_B(n) = O(1) $ for $ n \leq 1 $.
+        - Base cases: $T_A(n) = O(1)$ for $n \leq 0$, $T_B(n) = O(1)$ for $n \leq 1$.
 
     3. **Simplifying the Recurrences**:
-        - Substitute $ T_B(n-1) $ into $ T_A(n) $:
+        - Substitute $T_B(n-1)$ into $T_A(n)$:
             $$
             T_A(n) = O(1) + O(1) + T_A\left(\frac{n-1}{2}\right) \quad \text{(for } n > 2\text{)}
             $$
@@ -428,10 +428,10 @@ void fun_B(int n){
             $$
 
     4. **Solving the Recurrence**:
-        - The recurrence $ T(n) = T(n/2) + O(1) $ has a solution of $ O(\log n) $ by the Master Theorem (case 2 for decreasing functions).
+        - The recurrence $T(n) = T(n/2) + O(1)$ has a solution of $O(\log n)$ by the Master Theorem (case 2 for decreasing functions).
 
     5. **Conclusion**:
-        - Each recursive step reduces $ n $ by approximately half, leading to $ \log n $ steps. Each step involves $ O(1) $ work (prints and checks), resulting in a total time complexity of **O(log n)**.
+        - Each recursive step reduces $n$ by approximately half, leading to $\log n$ steps. Each step involves $O(1)$ work (prints and checks), resulting in a total time complexity of **O(log n)**.
     </details>
 
 - **Space Complexity**: $O(\log n)$
@@ -483,12 +483,12 @@ int fun(int n){
 }
 fun(95);
 ```
-The given function `fun(n)` is an implementation of the McCarthy 91 function, which recursively computes 91 for all inputs $ n \leq 100 $ and $ n - 10 $ otherwise.
+The given function `fun(n)` is an implementation of the McCarthy 91 function, which recursively computes 91 for all inputs $n \leq 100$ and $n - 10$ otherwise.
 
-- **Time Complexity**: $ O(1) $, as the number of operations does not scale with input size
-    - **Explanation**: Each call to `fun(n)` for $ n \leq 100 $ triggers two nested recursive calls: one to `fun(n + 11)` and another to `fun(result)`. For `fun(95)`, the recursion chain progresses from 95 to 100, with each step involving a fixed number of operations. The total number of function calls made is **13**, which is a constant.
+- **Time Complexity**: $O(1)$, as the number of operations does not scale with input size
+    - **Explanation**: Each call to `fun(n)` for $n \leq 100$ triggers two nested recursive calls: one to `fun(n + 11)` and another to `fun(result)`. For `fun(95)`, the recursion chain progresses from 95 to 100, with each step involving a fixed number of operations. The total number of function calls made is **13**, which is a constant.
 
-- **Space Complexity**: $ O(1) $, as the stack depth is constant and does not depend on input size.
+- **Space Complexity**: $O(1)$, as the stack depth is constant and does not depend on input size.
     - **Explanation**: The space complexity is determined by the maximum depth of the call stack. During the execution of `fun(95)`, the deepest stack occurs when the recursion reaches `fun(111)` (from `fun(100)`), resulting in a maximum stack depth of **7**.
 
 ![](/assets/recursion-type-nested.png)
